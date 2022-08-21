@@ -42,7 +42,7 @@ class CandidateHandler(
 
     suspend fun getById(request: ServerRequest): ServerResponse {
         return try {
-            val id = request.pathVariable("id")
+            val id = request.pathVariable("id").toInt()
 
             ServerResponse.ok()
                 .json()

@@ -1,12 +1,24 @@
 package io.github.siilas.votecerto.domain
 
-import java.util.UUID
+import io.github.siilas.votecerto.web.CandidateResponse
 
 data class Candidate(
-    val id: UUID,
+    val id: Int,
     val name: String,
-    val party: String,
     val number: Int,
-    val age: Int,
-    val proposals: List<Proposal>
-)
+    val politicalParty: String,
+    val office: String,
+    val description: String
+) {
+
+    fun toResponse(): CandidateResponse {
+        return CandidateResponse(
+            id,
+            name,
+            number,
+            politicalParty,
+            office,
+            description
+        )
+    }
+}

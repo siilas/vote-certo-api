@@ -1,12 +1,19 @@
 package io.github.siilas.votecerto.domain
 
+import io.github.siilas.votecerto.web.InformationResponse
+
 data class Information(
     val deputadoEstadualQuantity: Int,
     val deputadoFederalQuantity: Int,
-    val governadoresQuantity: Int
+    val governadorQuantity: Int
 ) {
 
-    fun candidatesQuantity(): Int {
-        return deputadoEstadualQuantity + deputadoFederalQuantity + governadoresQuantity
+    fun toResponse(): InformationResponse {
+        return InformationResponse(
+            deputadoEstadualQuantity,
+            deputadoFederalQuantity,
+            governadorQuantity,
+            deputadoEstadualQuantity + deputadoFederalQuantity + governadorQuantity
+        )
     }
 }

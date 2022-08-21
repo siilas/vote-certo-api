@@ -1,3 +1,3 @@
 package io.github.siilas.votecerto.exception
 
-class CandidateNotFoundException(id: String) : RuntimeException("Candidate $id not found")
+class CandidateNotFoundException(id: Int) : RuntimeException("Candidate $id not found")

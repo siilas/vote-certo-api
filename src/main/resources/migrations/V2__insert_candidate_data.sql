@@ -1,10 +1,10 @@
-insert into candidates(id, candidate_name, candidate_number, political_party, description)
+insert into candidates(id, name, number, political_party, office, description)
 values
-    (1, 'Tião', 12, 'USP', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam.'),
-    (2, 'Nelsinho', 1234, 'UNESP', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam.'),
-    (3, 'José', 12345, 'UFSCar', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam.');
+    (1, 'Juca', 12, 'USP', 'Governador', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam.'),
+    (2, 'Nelsinho', 1234, 'UNESP', 'Deputado Federal', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam.'),
+    (3, 'José', 12345, 'UFSCar', 'Deputado Estadual', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam.');
 
-insert into career(id, candidate_id, title, start_year, end_year)
+insert into career(id, candidate_id, office, start_year, end_year)
 values
     (1, 1, 'Deputado Estadual', 2011, 2014),
     (2, 1, 'Deputado Federal', 2015, 2018),
@@ -16,7 +16,7 @@ values
 insert into projects(id, candidate_id, title, description)
 values
     (1, 1, 'Meio Ambiente', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tincidunt dolor.'),
-    (2, 1, 'Inclusão Social', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tincidunt dolor.'),
+    (2, 1, 'Moradia', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tincidunt dolor.'),
     (3, 1, 'Diversidade', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tincidunt dolor.'),
     (4, 2, 'Combate ao Desmatamento', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tincidunt dolor.'),
     (5, 2, 'Escola Integral', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel tincidunt dolor.'),
