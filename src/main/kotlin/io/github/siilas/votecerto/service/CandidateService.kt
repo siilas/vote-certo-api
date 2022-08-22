@@ -16,7 +16,7 @@ class CandidateService(
 ) {
 
     suspend fun list(search: String): List<CandidateResponse> {
-        return candidateRepository.list(toLikeParameter(search))?.map { it.toResponse() } ?: emptyList()
+        return candidateRepository.list(search.toLikeParameter())?.map { it.toResponse() } ?: emptyList()
     }
 
     suspend fun getById(id: Int): CandidateResponse {

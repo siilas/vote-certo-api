@@ -23,7 +23,7 @@ class CandidateHandler(
 
     suspend fun list(request: ServerRequest): ServerResponse {
         return try {
-            val search = request.queryParamOrNull("search") ?: throw IllegalArgumentException("Search parameter is required")
+            val search = request.queryParamOrNull("search") ?: throw IllegalArgumentException("Parameter required: search")
 
             ServerResponse.ok()
                 .json()

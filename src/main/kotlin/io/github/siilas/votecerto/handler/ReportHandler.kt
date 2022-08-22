@@ -25,7 +25,7 @@ class ReportHandler(
 
     suspend fun getReport(request: ServerRequest): ServerResponse {
         return try {
-            val report = getCookie(request) ?: throw IllegalArgumentException("You need to add candidates before generating the report")
+            val report = request.getCookie() ?: throw IllegalArgumentException("You need to add candidates before generating the report")
 
             ServerResponse.ok()
                 .json()
@@ -40,11 +40,11 @@ class ReportHandler(
 
     suspend fun addCandidate(request: ServerRequest): ServerResponse {
         return try {
-            val id = request.queryParamOrNull("id")?.toInt() ?: throw IllegalArgumentException("Id is required")
-            val report = getCookie(request)
+            val id = request.queryParamOrNull("id")?.toInt() ?: throw IllegalArgumentException("Parameter required: id")
+            val report = request.getCookie()
 
             ServerResponse.ok()
-                .cookie(createCookie(reportService.addCandidate(id, report)))
+                .createCookie(reportService.addCandidate(id, report))
                 .buildAndAwait()
         } catch (e: IllegalArgumentException) {
             ServerResponse.badRequest()
@@ -64,10 +64,10 @@ class ReportHandler(
     suspend fun removeCandidate(request: ServerRequest): ServerResponse {
         return try {
             val id = request.pathVariable("id").toInt()
-            val report = getCookie(request) ?: throw IllegalArgumentException("You need to add candidates before removing candidates")
+            val report = request.getCookie() ?: throw IllegalArgumentException("You need to add candidates before removing candidates")
 
             ServerResponse.ok()
-                .cookie(createCookie(reportService.removeCandidate(id, report)))
+                .createCookie(reportService.removeCandidate(id, report))
                 .buildAndAwait()
         } catch (e: IllegalArgumentException) {
             ServerResponse.badRequest()

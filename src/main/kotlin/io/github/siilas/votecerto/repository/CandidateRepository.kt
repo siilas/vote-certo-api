@@ -31,7 +31,7 @@ private const val GET_INFORMATION = """
 """
 
 private const val LIST = """
-    select c.* 
+    select distinct c.* 
     from candidates c 
     join projects p on c.id = p.candidate_id
     where (c.name || ' ' || c.office || ' ' || p.title) ILIKE :search

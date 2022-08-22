@@ -2,7 +2,7 @@ insert into candidates(id, name, number, political_party, office, description)
 values
     (1, 'Juca', 12, 'USP', 'Governador', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam.'),
     (2, 'Nelsinho', 1234, 'UNESP', 'Deputado Federal', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam.'),
-    (3, 'José', 12345, 'UFSCar', 'Deputado Estadual', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam.');
+    (3, 'Silvio', 12345, 'UFSCar', 'Deputado Estadual', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante mauris, fringilla ut finibus ut, laoreet sit amet elit. Aliquam.');
 
 insert into career(id, candidate_id, office, start_year, end_year)
 values
