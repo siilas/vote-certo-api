@@ -30,6 +30,10 @@ class ReportHandler(
             ServerResponse.ok()
                 .json()
                 .bodyValueAndAwait(reportService.getReport(report))
+        } catch (e: IllegalArgumentException) {
+            ServerResponse.badRequest()
+                .json()
+                .bodyValueAndAwait(e.message ?: "Validation error")
         } catch (e: Exception) {
             logger.error("Error getting report", e)
 
@@ -63,7 +67,7 @@ class ReportHandler(
 
     suspend fun removeCandidate(request: ServerRequest): ServerResponse {
         return try {
-            val id = request.pathVariable("id").toInt()
+            val id = request.queryParamOrNull("id")?.toInt() ?: throw IllegalArgumentException("Parameter required: id")
             val report = request.getCookie() ?: throw IllegalArgumentException("You need to add candidates before removing candidates")
 
             ServerResponse.ok()
