@@ -21,7 +21,9 @@ class RouteConfiguration(
             GET("/api/info", homePageHandler::getInformation)
             GET("/api/candidate", candidateHandler::list)
             GET("/api/candidate/{id}", candidateHandler::getById)
-            POST("/api/report", reportHandler::generateReport)
+            GET("/api/report", reportHandler::getReport)
+            POST("/api/report/add", reportHandler::addCandidate)
+            DELETE("/api/report/remove/{id}", reportHandler::removeCandidate)
         }
     }
 }

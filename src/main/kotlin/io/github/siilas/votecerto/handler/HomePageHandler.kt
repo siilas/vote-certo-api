@@ -27,7 +27,7 @@ class HomePageHandler(
             logger.error("Error getting information", e)
 
             ServerResponse.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .bodyValueAndAwait("Error, please try again later.")
+                .bodyValueAndAwait("Error, please try again later")
         }
     }
 }

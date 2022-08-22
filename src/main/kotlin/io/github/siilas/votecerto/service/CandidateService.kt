@@ -25,9 +25,6 @@ class CandidateService(
         val career = careerRepository.getByCandidateId(id)
         val projects = projectsRepository.getByCandidateId(id)
 
-        return candidate.toResponse().copy(
-            career = career?.map { it.toResponse() },
-            projects = projects?.map { it.toResponse() }
-        )
+        return candidate.toResponse(career, projects)
     }
 }
